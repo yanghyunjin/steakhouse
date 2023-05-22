@@ -64,37 +64,17 @@
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-    <a-entity position="0 -200 -200" rotation="0 0 90">
-      <a-entity
-      gltf-model="./static/data/bird/scene.gltf"
-        scale="10 10 10"
-        position="0 0 100"
-        animation="property: position; to: 0 100 -70; dur: 6000; easing: linear; loop: true"
-        rotation="270 0 0"
-        animation-mixer
-      >
-    </a-entity>
-    
-    <a-entity
-      gltf-model="./static/data/bird/scene.gltf"
-        scale="10 10 10"
-        position="100 0 0"
-        animation="property: position; to: 100 -300 -100; dur: 5000; easing: linear; loop: true"
-        rotation="90 180 0"
-        animation-mixer
-      >
-    </a-entity>
-      <a-entity
-      gltf-model="./static/data/bird/scene.gltf"
-        scale="10 10 10"
-        position="0 100 0"
-        animation="property: position; to: 100 0 -100; dur: 3000; easing: linear; loop: true"
-        rotation="270 0 0"
-        animation-mixer
-      >
-    </a-entity>
-
-    </a-entity>
+      <a-entity position="0 0 0" rotation="0 0 0">
+        <a-entity
+        gltf-model="./static/data/bird/scene.gltf"
+          scale="10 10 10"
+          position="0 0 0"
+          animation="property: position; to: 0 100 -70; dur: 6000; easing: linear; loop: true"
+          rotation="0 0 0"
+          animation-mixer
+        >
+        </a-entity>
+      </a-entity>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
