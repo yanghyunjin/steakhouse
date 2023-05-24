@@ -77,10 +77,9 @@
       ></video>
     </a-assets>
 
-    <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
-      url="./static/data/dog300"
+      url="./static/data/flower"
       videohandler
       smooth="true"
       smoothCount="10"
@@ -91,17 +90,19 @@
       cursor="fuse: false; rayOrigin: mouse;"
       id="markerA"
     >
+    <!-- position="200 -200 -150" -->
      <a-entity position="0 0 0" rotation="0 0 0">
         <a-video
         src="#vid"
         scale="280 280 280"
-        position="200 -200 -130"
+        position="300 -200 -200"
         rotation="-90 0 0"
         class="clickable"
         gesture-handler
-      ></a-video>
-    </a-entity> 
-    </a-nft>    
+        ></a-video>
+      </a-entity> 
+    </a-nft>
+    
     <a-entity camera></a-entity>
   </a-scene>
 </body>
