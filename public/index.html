@@ -1,7 +1,34 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
+<!doctype html>
+<html>
+    <head>
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+<script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+<script>
+  AFRAME.registerComponent('videohandler', {
+      init: function () {
+          var marker = this.el;
+          console.log("aa")
+          this.vid = document.querySelector("#vid");
+
+          marker.addEventListener('markerFound', function () {
+              this.toggle = true;
+              console.log("bbb")
+              this.vid.play();
+          }.bind(this));
+
+          marker.addEventListener('markerLost', function () {
+              this.toggle = false;
+              console.log("cc")
+              this.vid.pause();
+          }.bind(this));
+      },
+  });
+</script>
 <style>
   .arjs-loader {
     height: 100%;
@@ -22,7 +49,7 @@
     color: white;
   }
 </style>
-
+</head>
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
@@ -33,49 +60,67 @@
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+    gesture-detector
   >
+    <a-assets>
+      <video
+          id="vid"
+          src="./static/data/asset.mp4"
+          preload="auto"
+          response-type="arraybuffer"
+          loop
+          crossorigin
+          webkit-playsinline
+          autoplay
+          muted
+          playsinline
+      ></video>
+    </a-assets>
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
       url="./static/data/dog300"
+      videohandler
       smooth="true"
       smoothCount="10"
       smoothThreshold="5"
+      smoothTolerance="0.01"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="markerA"
     >
-    <a-entity position="-400 -300 0" rotation="0 0 90">
-      <a-entity
+     <a-entity position="0 0 0" rotation="0 0 0">
+        <a-video
+        src="#vid"
+        scale="500 500 500"
+        position="450 1 -100"
+        rotation="-90 0 0"
+        class="clickable"
+        gesture-handler
+      ></a-video>
+      <!-- <a-entity
       gltf-model="./static/data/fractures/target3.gltf"
-      scale="150 150 150"
-      position="-70 -100 -50"
-      rotation="-90 0 0"
-      animation="property: position; to: -70 -100 -50; dur: 2000; easing: linear; loop: true"
+      scale="10 10 10"
+      position="0 0 -100"
+      rotation="0 -90 0"
       animation-mixer
       >
-      </a-entity>
-    </a-entity>
-
+      </a-entity> -->
+      <!-- <a-entity
+      gltf-model="./static/data/fractures/target3.gltf"
+      scale="150 150 150"  
+      position="400 1 150"
+      rotation="0 90 -90"
+      animation="property: position; to: 400 1 150; dur: 2000; easing: linear; loop: true"
+      animation-mixer
+      >
+      </a-entity> -->
+    </a-entity> 
       
     </a-nft>
-    <a-nft
-      type="nft"
-      url="./static/data/bridge3"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-      <a-entity position="-10 -10 -10" rotation="0 0 0">
-        <a-entity
-        gltf-model="./static/data/bat/scene.gltf"
-          scale="10 10 10"
-          position="0 0 0"
-          animation="property: position; to: 0 100 -70; dur: 6000; easing: linear; loop: true"
-          rotation="0 0 0"
-          animation-mixer
-        >
-        </a-entity>
-      </a-entity>
-    </a-nft>
+    
     <a-entity camera></a-entity>
   </a-scene>
 </body>
+</html>
