@@ -95,7 +95,7 @@
      <a-entity position="0 0 0" rotation="0 0 0">
         <a-video
         src="#vid"
-        scale="100 100 100"
+        scale="50 50 50"
         position="50 -200 -500"
         rotation="-90 0 0"
         class="clickable"
@@ -103,7 +103,37 @@
         animation="property: position; to: 50 100 -500; dur: 3000; easing: linear; loop: true"
         animation-mixer
         ></a-video>
-        <!-- <a-entity
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="0 0 0">
+        <a-video
+        src="#vid"
+        scale="50 50 50"
+        position="80 -200 -550"
+        rotation="-90 0 0"
+        class="clickable"
+        gesture-handler
+        animation="property: position; to: 80 100 -550; dur: 3000; easing: linear; loop: true"
+        animation-mixer
+        ></a-video>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="0 0 0">
+        <a-video
+        src="#vid"
+        scale="50 50 50"
+        position="130 -200 -550"
+        rotation="-90 0 0"
+        class="clickable"
+        gesture-handler
+        animation="property: position; to: 130 100 -550; dur: 3000; easing: linear; loop: true"
+        animation-mixer
+        ></a-video>
+      </a-entity>
+    </a-nft>
+
+    <a-entity camera></a-entity>
+    <!-- <a-entity
         gltf-model="./static/data/bat/scence.gltf"
         scale="280 280 280"
         position="200 -200 -300"
@@ -112,10 +142,6 @@
         animation-mixer
         >
         </a-entity> -->
-      </a-entity>
-    </a-nft>
-
-    <a-entity camera></a-entity>
   </a-scene>
 </body>
 </html>
