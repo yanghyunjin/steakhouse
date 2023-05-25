@@ -109,17 +109,17 @@
         <a-video
         src="#vid"
         scale="50 50 50"
-        position="100 -200 -650"
+        position="100 -200 -600"
         rotation="0 0 0"
         class="clickable"
         gesture-handler
-        animation="property: position; to: 100 100 -650; dur: 3000; easing: linear; loop: true"
+        animation="property: position; to: 100 100 -600; dur: 3000; easing: linear; loop: true"
         animation-mixer
         ></a-video>
       </a-entity>
 
       <a-entity position="0 0 0" rotation="0 0 0">
-        <a-video
+        <!-- <a-video
         src="#vid"
         scale="50 50 50"
         position="300 -200 -550"
@@ -128,7 +128,16 @@
         gesture-handler
         animation="property: position; to: 300 100 -550; dur: 3000; easing: linear; loop: true"
         animation-mixer
-        ></a-video>
+        ></a-video> -->
+        <a-entity
+        max-model="./static/data/bat/Model.max"
+        scale="50 50 50"
+        position="300 -200 -550"
+        rotation="0 0 0"
+        animation="property: position; to: 300 100 -550; dur: 3000; easing: linear; loop: true"
+        animation-mixer
+      ></a-entity>
+
       </a-entity>
     </a-nft>
 
