@@ -95,29 +95,25 @@
     >
     <!-- position="200 -200 -150" -->
      <a-entity position="0 0 0" rotation="0 0 0">
-        <a-video
-        src="#vid"
-        scale="50 50 50"
+        <a-entity
+        obj-model="obj: #bat-obj; mtl: #bat-mtl"
+        scale="20 20 20"
         position="50 -200 -500"
         rotation="0 0 0"
-        class="clickable"
-        gesture-handler
         animation="property: position; to: 50 100 -500; dur: 3000; easing: linear; loop: true"
         animation-mixer
-        ></a-video>
+      ></a-entity>
       </a-entity>
 
       <a-entity position="0 0 0" rotation="0 0 0">
-        <a-video
-        src="#vid"
-        scale="50 50 50"
+        <a-entity
+        obj-model="obj: #bat-obj; mtl: #bat-mtl"
+        scale="20 20 20"
         position="100 -200 -600"
         rotation="0 0 0"
-        class="clickable"
-        gesture-handler
         animation="property: position; to: 100 100 -600; dur: 3000; easing: linear; loop: true"
         animation-mixer
-        ></a-video>
+      ></a-entity>
       </a-entity>
 
       <a-entity position="0 0 0" rotation="0 0 0">
@@ -139,7 +135,6 @@
         animation="property: position; to: 300 100 -550; dur: 3000; easing: linear; loop: true"
         animation-mixer
       ></a-entity>
-
       </a-entity>
     </a-nft>
 
