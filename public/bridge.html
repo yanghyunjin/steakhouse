@@ -62,7 +62,7 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
     gesture-detector
   >
-    <!-- <a-assets>
+    <a-assets>
       <video
           id="vid"
           src="./static/data/asset.mp4"
@@ -75,7 +75,7 @@
           muted
           playsinline
       ></video>
-    </a-assets> -->
+    </a-assets>
 
     
     <a-nft
@@ -93,7 +93,17 @@
     >
     <!-- position="200 -200 -150" -->
      <a-entity position="0 0 0" rotation="0 0 0">
-        <a-entity
+        <a-video
+        src="#vid"
+        scale="280 280 280"
+        position="200 -200 -130"
+        rotation="-90 0 0"
+        class="clickable"
+        gesture-handler
+        animation="property: position; to: 200 -400 -300; dur: 2000; easing: linear; loop: true"
+        animation-mixer
+        ></a-video>
+        <!-- <a-entity
         gltf-model="./static/data/bat/scence.gltf"
         scale="280 280 280"
         position="200 -200 -300"
@@ -101,7 +111,7 @@
         animation="property: position; to: 200 -400 -300; dur: 2000; easing: linear; loop: true"
         animation-mixer
         >
-        </a-entity>
+        </a-entity> -->
       </a-entity>
     </a-nft>
 
