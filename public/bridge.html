@@ -75,7 +75,8 @@
           muted
           playsinline
       ></video>
-      <a-asset-item id="bat" src="./static/data/bat/Model.max"></a-asset-item>  
+      <a-asset-item id="bat-obj" src="./static/data/bat/bat.obj"></a-asset-item>
+      <a-asset-item id="bat-mtl" src="./static/data/bat/bat.mtl"></a-asset-item>
     </a-assets>
 
     
@@ -131,7 +132,7 @@
         animation-mixer
         ></a-video> -->
         <a-entity
-        obj-model="obj: /static/data/bat/bat.obj; mtl: /static/data/bat/bat.mtl"
+        obj-model="obj: #bat-obj; mtl: #bat-mtl"
         scale="20 20 20"
         position="300 -200 -550"
         rotation="0 0 0"
